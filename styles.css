@@ -1,6 +1,7 @@
 body{
     background-image: url(img/cards-casino-chance-269630.jpg);
     background-size: 100%;
+    background-attachment: fixed;
 }
 
 .titulo {
@@ -18,21 +19,29 @@ body{
     align-items: center;
 }
 
+.diler,
+.player {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 h2 {
     text-align: center;
     color: white;
     background: black;
+    width: 100%;
 }
 
 .carta_diler {
     background: white;
-    width: 100px;
-    height: 130px;
+    width: 70px;
+    height: 100px;
     border: 2px solid black;
     float: left;
     margin: 10px;
     text-align: center;
-    line-height: 130px;
+    line-height: 100px;
 }
 
 .boton_jugar {
@@ -55,19 +64,20 @@ h2 {
 
 .carta_player {
     background: white;
-    width: 100px;
-    height: 130px;
+    width: 70px;
+    height: 100px;
     border: 2px solid black;
     float: left;
     margin: 10px;
     text-align: center;
-    line-height: 130px;
+    line-height: 100px;
 }
 
 p {
     text-align: center;
     color: white;
     background: black;
+    width: 100%;
 }
 .botones_accion {
     height: 70px;
