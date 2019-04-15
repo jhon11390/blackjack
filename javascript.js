@@ -45,6 +45,23 @@ function cambio_numero2(lista2){
     });
 }
 
+function empacador(array, almacenador){
+    //recorre un array de etiquetas y alamecena un dato en un array definido llamado alamacenador
+    for(let unidad of array){
+        if(unidad.innerHTML == 'A'){
+            almacenador.push(11);
+        } else if(unidad.innerHTML == 'J'){
+            almacenador.push(10);
+        } else if(unidad.innerHTML == 'Q'){
+            almacenador.push(10);
+        } else if(unidad.innerHTML == 'K'){
+            almacenador.push(10);
+        } else {
+            almacenador.push(parseInt(unidad.innerHTML));
+        }
+    }
+}
+
 
 accion.addEventListener('click', ()=>{
     for(let dile of diler){
@@ -76,36 +93,12 @@ accion.addEventListener('click', ()=>{
     //diler
     let sumandosdiler = document.getElementsByClassName('carta_diler');
     let sumatoriadiler = [];
-    for(let unidaddiler of sumandosdiler){
-        if(unidaddiler.innerHTML == 'A'){
-            sumatoriadiler.push(11);
-        } else if(unidaddiler.innerHTML == 'J'){
-            sumatoriadiler.push(10);
-        } else if(unidaddiler.innerHTML == 'Q'){
-            sumatoriadiler.push(10);
-        } else if(unidaddiler.innerHTML == 'K'){
-            sumatoriadiler.push(10);
-        } else {
-            sumatoriadiler.push(parseInt(unidaddiler.innerHTML));
-        }
-    }
+    empacador(sumandosdiler, sumatoriadiler);
     cambio_numero(sumatoriadiler);
     // jugador
     let sumandos = document.getElementsByClassName('carta_player');
     let sumatoria = [];
-    for(let unidad of sumandos){
-        if(unidad.innerHTML == 'A'){
-            sumatoria.push(11);
-        } else if(unidad.innerHTML == 'J'){
-            sumatoria.push(10);
-        } else if(unidad.innerHTML == 'Q'){
-            sumatoria.push(10);
-        } else if(unidad.innerHTML == 'K'){
-            sumatoria.push(10);
-        } else {
-            sumatoria.push(parseInt(unidad.innerHTML));
-        }
-    }
+    empacador(sumandos, sumatoria)
     cambio_numero(sumatoria);
 })
 
@@ -126,37 +119,13 @@ pedir_carta.addEventListener('click', ()=>{
     document.querySelector('.player').append(caja_carta);
     let sumandos = document.getElementsByClassName('carta_player');
     let sumatoria = [];
-    for(let unidad of sumandos){
-        if(unidad.innerHTML == 'A'){
-            sumatoria.push(11);
-        } else if(unidad.innerHTML == 'J'){
-            sumatoria.push(10);
-        } else if(unidad.innerHTML == 'Q'){
-            sumatoria.push(10);
-        } else if(unidad.innerHTML == 'K'){
-            sumatoria.push(10);
-        } else {
-            sumatoria.push(parseInt(unidad.innerHTML));
-        }
-    }
+    empacador(sumandos, sumatoria);
     cambio_numero(sumatoria);
     let sumatotal = sumatoria.reduce((a,b)=> a+b);
     //suma cartas diler
     let sumandosdiler = document.getElementsByClassName('carta_diler');
     let sumatoriadiler = [];
-    for(let unidaddiler of sumandosdiler){
-        if(unidaddiler.innerHTML == 'A'){
-            sumatoriadiler.push(11);
-        } else if(unidaddiler.innerHTML == 'J'){
-            sumatoriadiler.push(10);
-        } else if(unidaddiler.innerHTML == 'Q'){
-            sumatoriadiler.push(10);
-        } else if(unidaddiler.innerHTML == 'K'){
-            sumatoriadiler.push(10);
-        } else {
-            sumatoriadiler.push(parseInt(unidaddiler.innerHTML));
-        }
-    }
+    empacador(sumandosdiler, sumatoriadiler);
     let sumatotaldiler = sumatoriadiler.reduce((a,b)=> a+b);
     if(sumatotal > 21){
         alert('Te has pasado :( ,gana la CASA');
@@ -176,19 +145,7 @@ parar.addEventListener('click', ()=>{
     diler[1].style.color = 'black';
     let sumandos = document.getElementsByClassName('carta_player');
     let sumatoria = [];
-    for(let unidad of sumandos){
-        if(unidad.innerHTML == 'A'){
-            sumatoria.push(11);
-        } else if(unidad.innerHTML == 'J'){
-            sumatoria.push(10);
-        } else if(unidad.innerHTML == 'Q'){
-            sumatoria.push(10);
-        } else if(unidad.innerHTML == 'K'){
-            sumatoria.push(10);
-        } else {
-            sumatoria.push(parseInt(unidad.innerHTML));
-        }
-    }
+    empacador(sumandos, sumatoria);
     cambio_numero(sumatoria);
     let sumatotal = sumatoria.reduce((a,b)=> a+b);
     pedir_carta.style.display = 'none';
@@ -199,19 +156,7 @@ parar.addEventListener('click', ()=>{
     //codigo para el diler
     let sumandosdiler = document.getElementsByClassName('carta_diler');
     let sumatoriadiler = [];
-    for(let unidaddiler of sumandosdiler){
-        if(unidaddiler.innerHTML == 'A'){
-            sumatoriadiler.push(11);
-        } else if(unidaddiler.innerHTML == 'J'){
-            sumatoriadiler.push(10);
-        } else if(unidaddiler.innerHTML == 'Q'){
-            sumatoriadiler.push(10);
-        } else if(unidaddiler.innerHTML == 'K'){
-            sumatoriadiler.push(10);
-        } else {
-            sumatoriadiler.push(parseInt(unidaddiler.innerHTML));
-        }
-    }
+    empacador(sumandosdiler, sumatoriadiler);
     cambio_numero(sumatoriadiler);
     let sumatotaldiler = sumatoriadiler.reduce((a,b)=> a+b);
     while(sumatotaldiler < 17){
