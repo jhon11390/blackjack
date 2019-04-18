@@ -34,7 +34,10 @@ h2 {
 }
 
 .carta_diler {
-    background: white;
+    background: url(img/corazones.jpg), url(img/diamantes.jpg), url(img/picas.jpg), url(img/treboles.jpg), white;
+    background-size: 30%, 30%, 30%, 30%;
+    background-repeat: no-repeat, no-repeat, no-repeat,no-repeat;
+    background-position: top right, top left, bottom right, bottom left;
     width: 70px;
     height: 100px;
     border: 2px solid black;
@@ -63,7 +66,10 @@ h2 {
 }
 
 .carta_player {
-    background: white;
+    background: url(img/corazones.jpg), url(img/diamantes.jpg), url(img/picas.jpg), url(img/treboles.jpg), white;
+    background-size: 30%, 30%, 30%, 30%;
+    background-repeat: no-repeat, no-repeat, no-repeat,no-repeat;
+    background-position: top right, top left, bottom right, bottom left;
     width: 70px;
     height: 100px;
     border: 2px solid black;
